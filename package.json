@@ -1,0 +1,27 @@
+{
+  "name": "silicon-cabinet",
+  "version": "1.0.0",
+  "description": "a cabinet of ai agents for any consultation",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "cabinet",
+    "ai",
+    "silicon",
+    "team",
+    "agents",
+    "discussion"
+  ],
+  "author": "Mark Fainstein",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "openai": "^4.4.0",
+    "ora": "^7.0.1",
+    "prompt-sync": "^4.2.0",
+    "replicate": "^0.16.1"
+  }
+}

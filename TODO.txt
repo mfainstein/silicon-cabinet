@@ -1,0 +1,16 @@
+1. Speaker election mechanism
+  1.1 Should one of the speaker speak last (higher title, type of discussion)
+  1.2 Pre query to understand which agent should speak 
+2. Asking questions
+  2.1 Asking to validate assumptions/data
+  2.2 Asking for additional data
+  2.3 Agents to ask questions
+  2.4 
+3. Halting condition
+  3.1 Concencus (for instanc of x/all roles) - the moderator could be an engine selcted
+  3.2 Max discussion (context window size? summary?)
+4. Agents election strategies - ask an engine for the stakeholders for a specific topic ?
+5. Agent characteristics (stubborness, concensus seeker etc.)
+6. Discussion moderator as an agent - gets context and decides who needs to speak next
+7. chalk, colors, ask chatgpt how to print a discussion nicely
+8. behavior parameters
