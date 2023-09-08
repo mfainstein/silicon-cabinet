@@ -2,7 +2,7 @@
 
 > "Every decision maker needs a cabinet" -- Anonymous
 
-[Lincoln's Cabinet]([image_url](https://tile.loc.gov/storage-services/service/rbc/lprbscsm/scsm0440/001q.gif#h=600&w=800))
+![Lincoln's Cabinet](https://tile.loc.gov/storage-services/service/rbc/lprbscsm/scsm0440/001q.gif#h=600&w=800))
 
 ## Description
 Sillicon Cabinet is a versatile Node.js package offering a cabinet of AI agents for any consultations. Leveraging different AI engines like ChatGPT, Replicate Llama, etc., this package simulates conversations between multiple stakeholders in any context. Whether you're discussing KPIs in a B2B setting or exploring strategic options, Sillicon Cabinet provides AI-powered insights and decision-making aids.
@@ -10,17 +10,17 @@ Sillicon Cabinet is a versatile Node.js package offering a cabinet of AI agents 
 ## Installation
 Install the package using npm:
 
-\`\`\`bash
+```bash
 npm install sillicon-cabinet
-\`\`\`
+```
 
 ## Configuration
 
 ### Credentials Configuration
 
-To get started, you will need to provide credentials for the AI engines you intend to use. Create a JSON file (\`credentials.json\`) with the following structure:
+To get started, you will need to provide credentials for the AI engines you intend to use. Create a JSON file (`credentials.json`) with the following structure:
 
-\`\`\`json
+```json
 {
     "openAi": {
         "apiKey": "your-openai-api-key",
@@ -30,13 +30,13 @@ To get started, you will need to provide credentials for the AI engines you inte
         "key": "your-replicate-key"
     }
 }
-\`\`\`
+```
 
 ### Forum Configuration
 
-For each discussion, you will need to provide a configuration file (\`forum.json\`). Here's an example:
+For each discussion, you will need to provide a configuration file (`forum.json`). Here's an example:
 
-\`\`\`json
+```json
 {
     "context": "Discuss: Do the benefits of social media outweigh its drawbacks?"
     "roles": [
@@ -55,15 +55,15 @@ For each discussion, you will need to provide a configuration file (\`forum.json
         }
     }
 }
-\`\`\`
+```
 
 ## Usage
 
 To run Sillicon Cabinet, execute the following command:
 
-\`\`\`bash
+```bash
 node index.js path/to/credentials.json path/to/forum.json
-\`\`\`
+```
 
 ### How it Works
 
