@@ -1,11 +1,16 @@
 # Sillicon Cabinet
 
-> "Every decision maker needs a cabinet" -- Anonymous
+> "Every decision maker needs a cabinet" -- Unkown
 
-![Lincoln's Cabinet](https://tile.loc.gov/storage-services/service/rbc/lprbscsm/scsm0440/001q.gif#h=600&w=800))
+> "Give me six hours to chop down a tree and I will spend the first four sharpening the axe."
+-- Abraham Lincoln
+
+
+
+![Lincoln's Cabinet](https://tile.loc.gov/storage-services/service/rbc/lprbscsm/scsm0440/001q.gif#h=400&w=800)
 
 ## Description
-Sillicon Cabinet is a versatile Node.js package offering a cabinet of AI agents for any consultations. Leveraging different AI engines like ChatGPT, Replicate Llama, etc., this package simulates conversations between multiple stakeholders in any context. Whether you're discussing KPIs in a B2B setting or exploring strategic options, Sillicon Cabinet provides AI-powered insights and decision-making aids.
+Sillicon Cabinet is a Node.js package offering a cabinet of AI agents for any consultations. Leveraging different AI engines like ChatGPT, Replicate Llama, etc., this package simulates conversations between multiple stakeholders in any context. Whether you're discussing KPIs in a B2B setting or exploring strategic options, Sillicon Cabinet provides AI-powered insights and decision-making aids.
 
 ## Installation
 Install the package using npm:
