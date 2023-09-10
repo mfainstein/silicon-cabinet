@@ -9,6 +9,8 @@ import { ReplicateLlama270bAgent } from './agents/replicate-llama-2-70b-agent.js
 import { ReplicateLlamaVicunaAgent } from './agents/replicate-llama-vicuna-agent.js';
 import { Moderator } from './moderator.js';
 import chalk from 'chalk';
+import { Discussion } from '../helpers/discussion.js';
+import { HumanPoweredAgent } from './agents/human-powered-agent.js';
 
 const COLORS = [chalk.red, chalk.blue, chalk.green, chalk.magenta, chalk.yellow, chalk.cyan];
 
@@ -21,6 +23,8 @@ function loadForumConfiguration() {
 
 function createAgent(role, engine, otherRoles, color) {
     switch (engine) {
+        case ENGINES.HUMAN_POWERED:
+            return new HumanPoweredAgent(role, engine, otherRoles, color);
         case ENGINES.CHAT_GPT:
             return new ChatGptAgent(role, engine, otherRoles, color);
         case ENGINES.CHAT_GPT_THREE:
@@ -37,10 +41,11 @@ function createAgent(role, engine, otherRoles, color) {
 export async function createAgents() {
     let forum = loadForumConfiguration();
     let roles = forum.roles;
+    let humanRoles = forum.humanRoles;
     let agents = [];
     let i = 0;
     for (let role of roles) {
-        const enumKeys = Object.keys(ENGINES);
+        const enumKeys = Object.keys(ENGINES).filter(item=>item!="HUMAN_POWERED"); //TODO: awkward way to do this
         let engine = ENGINES[enumKeys[i % enumKeys.length]];
         let color = COLORS[i % COLORS.length]
         i = i + 1;
@@ -48,37 +53,30 @@ export async function createAgents() {
         console.log("Agent created: " + agent.role + " " + agent.engine);
         agents.push(agent);
     }
-    return agents;
-}
-
-export async function electSpeaker(roles, moderator, context) {
-    let whoShouldSpeakNow = await moderator.call(context);
-    console.log("Moderator: " + whoShouldSpeakNow + " should speak next.");
-    let electedRole = roles.find(role => role?.toLowerCase() == whoShouldSpeakNow?.toLowerCase());
-    if (!electedRole) {
-        return roles[Math.floor(Math.random() * roles.length)];
+    let j = i+1;
+    for (let humanRole of humanRoles){
+        let color = COLORS[i % COLORS.length];
+        let agent = createAgent(humanRole, ENGINES.HUMAN_POWERED, forum.humanRoles.filter(item => item != humanRole), color);
+        j++;
+        console.log("Agent (Human Powered) created: " + agent.role + " " + agent.engine);
+        agents.push(agent);
     }
-    return electedRole;
+    return agents;
 }
 
 export async function discuss(agents) {
     let forum = loadForumConfiguration();
-    let context = forum.context;
-    let moderator = new Moderator(forum.roles);
-    console.log("Discussing: " + context + "\n");
+    let discussion = new Discussion(forum.context);
+    let moderator = new Moderator(forum.roles, forum.humanRoles);
     let discussionLength = 10;
-    let discussionArguments = 0;
     let nextSpeaker = agents[Math.floor(Math.random() * forum.roles.length)];
     for (let i = 0; i < discussionLength; i++) {
         let agent = nextSpeaker;
-        let argument = await agent.call(context);
-        context = context + "\n" + agent.getRole() + " : " + argument + "\n";
+        let argument = await agent.call(discussion.toString());
         let color = agent.getColor();
-        console.log(color(agent.getRole() + ": " + argument));
-        //TODO: electSpeaker should be a method of the moderator
-        let nextRoleToSpeak = await electSpeaker(forum.roles.push(forum.humanRoles), moderator, context);
+        discussion.addArgument(nextSpeaker.role, argument, color);
+        let nextRoleToSpeak = await moderator.electSpeaker(discussion);
         nextSpeaker = agents.find(agent => agent.role?.toLowerCase() == nextRoleToSpeak?.toLowerCase());
-    
     }
     console.log("\n================================================================\n")
 }

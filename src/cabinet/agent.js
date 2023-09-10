@@ -1,7 +1,7 @@
 import chalk from "chalk";
 
-export const NUMBER_OF_ENGINES = 4;
 export const ENGINES = {
+    HUMAN_POWERED: "human-powered",
     CHAT_GPT: "chat-gpt",
     CHAT_GPT_THREE: "chat-gpt-three",
     REPLICATE__LLAMA_2_70B: "replicate-llama-2-70b",

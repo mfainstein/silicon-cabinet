@@ -10,7 +10,7 @@ export async function call(prompt, systemPrompt) {
     try {
         const spinner = ora({ spinner: 'pipe' }).start();
         const output = await replicate.run(
-            "meta/llama-2-13b-chat:de18b8b68ef78f4f52c87eb7e3a0244d18b45b3c67affef2d5055ddc9c2fb678",
+            "replicate/vicuna-13b:6282abe6a492de4145d7bb601023762212f9ddbbe78278bd6771c8b3b2f2a13b",
             {
                 input: {
                     prompt: prompt,
