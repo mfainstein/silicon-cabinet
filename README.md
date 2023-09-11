@@ -13,10 +13,10 @@
 Sillicon Cabinet is a Node.js package offering a cabinet of AI agents for any consultations. Leveraging different AI engines like ChatGPT, Replicate Llama, etc., this package simulates conversations between multiple stakeholders in any context. Whether you're discussing KPIs in a B2B setting or exploring strategic options, Sillicon Cabinet provides AI-powered insights and decision-making aids.
 
 ## Installation
-Install the package using npm:
+Install the package using npm - cd to the cloned path:
 
 ```bash
-npm install sillicon-cabinet
+npm install
 ```
 
 ## Configuration
@@ -67,7 +67,7 @@ For each discussion, you will need to provide a configuration file (`forum.json`
 To run Sillicon Cabinet, execute the following command:
 
 ```bash
-node index.js path/to/credentials.json path/to/forum.json
+node index.js
 ```
 
 ### How it Works
@@ -76,10 +76,7 @@ node index.js path/to/credentials.json path/to/forum.json
 - A moderator, powered by ChatGPT, is provided the context and the discussion so far.
 - The moderator chooses the next speaker based on the discussion, references, and questions.
 - If the role is a human role, you will be prompted to provide an argument for that role.
-- Behaviour parameters can be fine-tuned to influence an agent's answers and behavior.
-
-## Contributing
-We welcome contributions! Please check out the [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
+- Behaviour parameters can be fine-tuned to influence an agent's answers and behavior (TODO)
 
 ## License
 MIT License
