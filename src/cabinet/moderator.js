@@ -1,6 +1,6 @@
 import { call as chatGptCall } from "../api/chat-gpt.js";
 export const HALTING_STRATEGIES = {
-    MAJORITY_CONCENCUS: "Concensus",
+    MAJORITY_CONSENSUS: "Consensus",
     MAX_ARGUMENTS: "MaxArguments",
 }
 export const CONCLUSION_STRATEGIES = {
