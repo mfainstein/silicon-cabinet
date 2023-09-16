@@ -14,7 +14,8 @@ export async function call(prompt, systemPrompt) {
             {
                 input: {
                     prompt: prompt,
-                    system_prompt: systemPrompt
+                    system_prompt: systemPrompt,
+                    max_new_tokens: 10000
                 }
             }
         );
