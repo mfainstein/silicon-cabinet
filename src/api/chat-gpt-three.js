@@ -9,8 +9,8 @@ const apiClient = new OpenAI({
 
 // Function to make the API call
 export async function call(prompt) {
+    const spinner = ora({ spinner: 'pipe' }).start();
     try {
-        const spinner = ora({ spinner: 'pipe' }).start();
         const completion = await apiClient.chat.completions.create({
             model: 'gpt-3.5-turbo',
             messages: [{ role: "user", content: prompt }],

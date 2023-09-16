@@ -7,8 +7,8 @@ const replicate = new Replicate({
 });
 
 export async function call(prompt, systemPrompt) {
+    const spinner = ora({ spinner: 'pipe' }).start();
     try {
-        const spinner = ora({ spinner: 'pipe' }).start();
         const output = await replicate.run(
             "replicate/llama-2-70b-chat:2796ee9483c3fd7aa2e171d38f4ca12251a30609463dcfd4cd76703f22e96cdf",
             {
