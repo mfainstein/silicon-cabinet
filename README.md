@@ -105,6 +105,7 @@ node index.js
 - The moderator chooses the next speaker based on the discussion, references, and questions.
 - If the role is a human role, you will be prompted to provide an argument for that role.
 - Behaviour parameters can be fine-tuned to influence an agent's answers and behavior (TODO)
+- The moderator concludes and summarizes the discussion according to the conclusion strategy chosen. 
 
 ## License
 MIT License
