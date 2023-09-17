@@ -92,7 +92,7 @@ For each discussion, you will need to provide a configuration file (`forum.json`
 
 ## Usage
 
-To run Sillicon Cabinet, execute the following command:
+To run Silicon Cabinet, execute the following command:
 
 ```bash
 node index.js
