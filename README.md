@@ -9,7 +9,7 @@
 
 ## Description
 
-Silicon Cabinet is a versatile Node.js package that equips you with an advisory panel of AI agents for consultations. Built on top of various AI engines like ChatGPT, Replicate Llama, and more, this package enables simulated multi-stakeholder dialogues for an array of situations. From evaluating key performance indicators in a corporate environment to analyzing different strategic avenues, Silicon Cabinet delivers AI-guided perspectives and support for your decision-making processes.
+Silicon Cabinet is a Node.js package that equips you with an advisory panel of AI agents for consultations. Built on top of various AI engines like ChatGPT, Replicate Llama, and more, this package enables simulated multi-stakeholder dialogues for an array of situations. From evaluating key performance indicators in a corporate environment to analyzing different strategic avenues, Silicon Cabinet delivers AI-guided perspectives and support for your decision-making processes.
 
 ### Example Scenarios
 
