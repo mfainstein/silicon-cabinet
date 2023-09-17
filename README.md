@@ -5,7 +5,7 @@
 > "Give me six hours to chop down a tree and I will spend the first four sharpening the axe."
 -- Abraham Lincoln
 
-![Lincoln's Cabinet](https://tile.loc.gov/storage-services/service/rbc/lprbscsm/scsm0440/001q.gif#h=400&w=800)
+![Lincoln's Cabinet](https://tile.loc.gov/storage-services/service/rbc/lprbscsm/scsm0440/001q.gif#h=400&w=80, "Lincoln's Cabinet")
 
 ## Description
 
