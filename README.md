@@ -27,6 +27,9 @@ Silicon Cabinet is a versatile Node.js package that equips you with an advisory 
 
 7. **Health and Wellness**: Create a simulated discussion between nutritionists, personal trainers, and family doctors to develop a personalized fitness and diet plan.
 
+## Examples of Actual Discussions
+**[Hiring Scorecard Engineer](./examples/scorecard-hiring.md)**: Explore a simulated discssuion aimed at creating a scorecard for hiring of a fullstack engineer. 
+
 
 ## Advantages of Using Silicon Cabinet over Single-Prompt, Single-Engine Approaches
 
