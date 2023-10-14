@@ -5,7 +5,7 @@ export const ENGINES = {
     CHAT_GPT: "chat-gpt",
     CHAT_GPT_THREE: "chat-gpt-three",
     REPLICATE__LLAMA_2_70B: "replicate-llama-2-70b",
-    REPLICATE__LLAMA_VICUNA: "replicate-llama-vicuna"
+    REPLICATE__LLAMA_2_13B: "replicate-llama-2-13b"
 }
 
 export class Agent {
@@ -25,6 +25,13 @@ export class Agent {
         }
     }
 
+    getValidEngineKeys() {
+        let validEngines = [];
+        for (let engine of Object.keys(ENGINES)) {
+
+        }
+    }
+
     getRole() {
         return this.role;
     }
@@ -39,6 +46,10 @@ export class Agent {
 
 
     async call(context) {
+        // overloaded
+    }
+
+    isValid() {
         // overloaded
     }
 }

@@ -1,4 +1,4 @@
-import { call as replicateLlamaCall270b } from "../../api/replicate-llama-2-70b.js";
+import { call, isValid } from "../../api/replicate-llama-2-70b.js";
 import { Agent } from "../agent.js"
 export class ReplicateLlama270bAgent extends Agent {
     createSystemPrompt() {
@@ -12,7 +12,11 @@ export class ReplicateLlama270bAgent extends Agent {
     async call(prompt) {
         let systemPrompt = this.createSystemPrompt();
         let context = this.createPrompt(prompt);
-        return replicateLlamaCall270b(context, systemPrompt);
+        return call(context, systemPrompt);
+    }
+
+    isValid() {
+        return isValid();
     }
 
 }

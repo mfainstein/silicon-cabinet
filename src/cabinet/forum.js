@@ -6,7 +6,7 @@ import * as path from 'path';
 import { ChatGptAgent } from './agents/chat-gpt-agent.js';
 import { ChatGptThreeAgent } from './agents/chat-gpt-three-agent.js';
 import { ReplicateLlama270bAgent } from './agents/replicate-llama-2-70b-agent.js';
-import { ReplicateLlamaVicunaAgent } from './agents/replicate-llama-vicuna-agent.js';
+import { ReplicateLlama213BAgent } from './agents/replicate-llama-2-13b-agent.js';
 import { CONCLUSION_STRATEGIES, HALTING_STRATEGIES, Moderator } from './moderator.js';
 import chalk from 'chalk';
 import { Discussion } from '../helpers/discussion.js';
@@ -31,8 +31,8 @@ function createAgent(role, engine, otherRoles, color) {
             return new ChatGptThreeAgent(role, engine, otherRoles, color);
         case ENGINES.REPLICATE__LLAMA_2_70B:
             return new ReplicateLlama270bAgent(role, engine, otherRoles, color);
-        case ENGINES.REPLICATE__LLAMA_VICUNA:
-            return new ReplicateLlamaVicunaAgent(role, engine, otherRoles, color);
+        case ENGINES.REPLICATE__LLAMA_2_13B:
+            return new ReplicateLlama213BAgent(role, engine, otherRoles, color);
         default:
             return new ChatGptAgent(role, engine, otherRoles, color);
     }

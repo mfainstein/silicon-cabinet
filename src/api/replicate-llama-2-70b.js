@@ -6,6 +6,11 @@ const replicate = new Replicate({
     auth: load("replicate", "key"),
 });
 
+export function isValid() {
+    let key = load("replicate", "key");
+    return key?.length > 0
+}
+
 export async function call(prompt, systemPrompt) {
     const spinner = ora({ spinner: 'pipe' }).start();
     try {
